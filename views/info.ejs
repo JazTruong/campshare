@@ -1,0 +1,20 @@
+<h1>About this Camp Site</h1>
+
+<h4><u>Name:</u></h4>
+<p><%= campsite.name %></p>
+
+<img src="<%= campsite.image_url %>" alt="">
+
+<h4><u>Location:</u></h4>
+<p><%= campsite.location %></p>
+
+<h4><u>Description:</u></h4>
+<p><%= campsite.description %></p> 
+
+<form action="/campsites/<%= campsite.id %>?_method=delete" method="post">
+
+    <button>Delete</button>
+    <br>
+    <a href="/campsites/<%= campsite.id %>/edit">edit</a>
+
+</form>

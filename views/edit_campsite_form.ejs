@@ -1,0 +1,19 @@
+<h1>Edit campsite</h1>
+
+<form action="/campsites/<%= campsite.id %>?_method=put" method="post">
+
+    <label for="">Name</label>
+    <input type="text" name="name" value="<%= campsite.name %>">
+
+    <label for="">Location</label>
+    <input type="text" name="location" value="<%= campsite.location %>">
+
+    <label for="">Image</label>
+    <input type="text" name="image_url" value="<%= campsite.image_url %>">
+
+    <label for="">Description</label>
+    <textarea name="description"><%= campsite.description %></textarea>
+    
+    <button>update</button>
+
+</form>

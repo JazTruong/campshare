@@ -1,0 +1,12 @@
+<h1>Favourite Campsites</h1>
+
+<% for (let campsite of campsites) { %>
+
+    <h3>
+        <a href="/campsites/<%= campsite.id %>">
+        <%= campsite.name %></a>
+    </h3>
+
+    <img src="<%= campsite.image_url %>" alt="">
+
+<% } %>
