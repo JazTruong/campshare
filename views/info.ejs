@@ -11,6 +11,9 @@
 <h4><u>Description:</u></h4>
 <p><%= campsite.description %></p> 
 
+<h4><u>Thing to do:</u></h4>
+<p><%= campsite.thing_to_do %></p>
+
 <form action="/campsites/<%= campsite.id %>?_method=delete" method="post">
 
     <button>Delete</button>
