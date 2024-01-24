@@ -7,30 +7,35 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+    <div class="page-wrapper">
 
-    <p>
-        <a href="/">home</a>
-        <a href="/campsites">campsites</a>
-        <a href="/campsites/new">share your campsite</a>
-    </p>
-
-    <% if (currentUser) { %>
-
-        <p>Welcome back <%= currentUser.email %>!</p>
-
-        <form action="/logout?_method=delete" method="post">
-            <button>logout</button>
-        </form>
+        <header class="page-header">
+        <nav>
+            <a href="/">home</a>
+            <a href="/campsites">campsites</a>
+            <a href="/campsites/new">share your campsite</a>
+        </nav>
     
-    <% } else { %>
+        <% if (currentUser) { %>
+    
+            <p>Welcome back: <%= currentUser.email %>!</p>
+    
+            <form action="/logout?_method=delete" method="post">
+                <button>logout</button>
+            </form>
+        
+        <% } else { %>
+    
+        <div class="login">
+            <a href="/login">Log in</a>
+            <br>
+            <a href="/signup">Sign up</a>
+        </div>
+    
+        <% } %>
+        </header>
 
-    <p>
-        <a href="/login">Log in</a>
-        <br>
-        <a href="/signup">Sign up</a>
-    </p>
-
-    <% } %>
+    </div>
 
     <%- body %>
 

@@ -1,5 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(115, 138, 115);
+}
+
+.page-wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+.home-page {
+    
 }
 
 img {

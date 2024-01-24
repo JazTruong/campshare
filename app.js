@@ -29,6 +29,7 @@ app.use(setCurrentUser);
 app.use(express.urlencoded({ extended: true }));
 
 // ------------------- +++ -------------------- //
+
 app.use(homeRouter);
 app.use(campsiteRouter);
 app.use(sessionRouter);

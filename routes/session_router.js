@@ -9,10 +9,25 @@ router.get('/signup', (req, res) => {
 });
 
 router.post('/signup', (req, res) => {
+    const sql = `SELECT * FROM users WHERE email = $1;`
+    db.query(sql, [req.body.email], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.render('/signup')
+            return
+        }
+
+        if (result.rows[0].email === req.body.email) {
+            console.log('email existed!');
+            res.render('email_existed')
+            return
+        }
+    });
+    
     const email = req.body.email;
     const plainTextPass = req.body.password;
     const saltRound = 10;
-
+    
     bcrypt.genSalt(saltRound, (err, salt) => {
         bcrypt.hash(plainTextPass, salt, (err, hashedPass) => {
             const sql = `
@@ -39,9 +54,9 @@ router.get('/login', (req, res) => {
 
 router.post('/login', (req, res) => {
     const sql = `
-        SELECT * FROM users WHERE email = '${req.body.email}';
+        SELECT * FROM users WHERE email = $1;
     `
-    db.query(sql, (err, result) => {
+    db.query(sql, [req.body.email], (err, result) => {
         if (err) {
             console.log(err);
             res.render('login')
