@@ -11,30 +11,31 @@
 
         <header class="page-header">
         <nav>
-            <a href="/">home</a>
-            <a href="/campsites">campsites</a>
-            <a href="/campsites/new">share your campsite</a>
+            <a class="home-btn" href="/">Home</a>
         </nav>
-    
-        <% if (currentUser) { %>
-    
-            <p>Welcome back: <%= currentUser.email %>!</p>
-    
-            <form action="/logout?_method=delete" method="post">
-                <button>logout</button>
-            </form>
-        
-        <% } else { %>
-    
-        <div class="login">
-            <a href="/login">Log in</a>
-            <br>
-            <a href="/signup">Sign up</a>
-        </div>
-    
-        <% } %>
-        </header>
 
+        
+        <% if (currentUser) { %>
+            
+            <div class="after-login">
+                <p class="welcome">Welcome back - <%= currentUser.email %></p>
+                <form action="/logout?_method=delete" method="post">
+                    <button class="logout-btn">Logout</button>
+                </form>
+            </div>
+            
+            <% } else { %>
+                
+                
+                    <a class="login-btn"  href="/login">Log in</a>
+
+                    <a class="style-btn" href="/signup">Sign up</a>
+                
+                
+                <% } %>
+            </header>
+
+         
     </div>
 
     <%- body %>

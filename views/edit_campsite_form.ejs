@@ -1,28 +1,34 @@
-<h1>Edit campsite</h1>
+<h1 class="sub-title">Edit <span class="title-color">campsite</span></h1>
 
 <form action="/campsites/<%= campsite.id %>?_method=put" method="post">
-
-    <label for="">Name</label>
-    <input type="text" name="name" value="<%= campsite.name %>">
-
-    <label for="">Location</label>
-    <input type="text" name="location" value="<%= campsite.location %>">
-
-    <label for="">Image</label>
-    <input type="text" name="image_url" value="<%= campsite.image_url %>">
-
-    <label for="">Image</label>
-    <input type="text" name="image_url_1" value="<%= campsite.image_url_1 %>">
-
-    <label for="">Image</label>
-    <input type="text" name="image_url_2" value="<%= campsite.image_url_2 %>">
-
-    <label for="">Thing to do</label>
-    <textarea name="thing_to_do"><%= campsite.thing_to_do %></textarea>
-
-    <label for="">Description</label>
-    <textarea name="description"><%= campsite.description %></textarea>
+<div class="share-wrapper">
+    <div>
+        <label for="">Name</label>
+        <input type="text" name="name" value="<%= campsite.name %>">
     
-    <button>update</button>
+        <label for="">Location</label>
+        <input type="text" name="location" value="<%= campsite.location %>">
+    </div>
+    <div>
+        <label for="">Image</label>
+        <input type="text" name="image_url" value="<%= campsite.image_url %>">
+    
+        <label for="">Image</label>
+        <input type="text" name="image_url_1" value="<%= campsite.image_url_1 %>">
+    
+        <label for="">Image</label>
+        <input type="text" name="image_url_2" value="<%= campsite.image_url_2 %>">
+    </div>
+    <div>
+        <label for="">Thing to do</label>
+        <textarea name="thing_to_do"><%= campsite.thing_to_do %></textarea>
+    
+        <label for="">Description</label>
+        <textarea name="description"><%= campsite.description %></textarea>
+    </div>
+    <div>
+        <button class="style-btn">Update</button>
+    </div>
+</div>
 
 </form>

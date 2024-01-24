@@ -1,47 +1,62 @@
-<h1>About this Camp Site</h1>
+<h1 class="info-page">About this <span class="title-color">campsite</span></h1>
 
-<h4><u>Name:</u></h4>
-<p><%= campsite.name %></p>
-
-<img src="<%= campsite.image_url %>" alt="">
-
-<img src="<%= campsite.image_url_1 %>" alt="">
-
-<img src="<%= campsite.image_url_2 %>" alt="">
-
-<h4><u>Location:</u></h4>
+<h4><%= campsite.name %></h4>
 <p><%= campsite.location %></p>
 
-<h4><u>Description:</u></h4>
-<p><%= campsite.description %></p> 
+<div class="info-img">
+    <img src="<%= campsite.image_url %>" alt="">
+    <img src="<%= campsite.image_url_1 %>" alt="">
+    <img src="<%= campsite.image_url_2 %>" alt="">
+   
+</div>
 
-<h4><u>Thing to do:</u></h4>
-<p><%= campsite.thing_to_do %></p>
+<div class="text-info">
+    <div>
+        <h4>Description:</h4>
+        <p><%= campsite.description %></p> 
+    </div>
+    
+    <div>
+        <h4>Thing to do:</h4>
+        <p><%= campsite.thing_to_do %></p>
+    </div>
+</div>
 
 <form action="/campsites/<%= campsite.id %>?_method=delete" method="post">
     
-    <button>Delete</button>
-    <br>
-    <a href="/campsites/<%= campsite.id %>/edit">edit</a>
-    
 </form>
 
-<h1>comment</h1>
 
-<% for (let comment of comments) { %>
-    
-    <p><%= comment.name %> - <span><%= comment.date %></span></p>
-    <p><%= comment.comment %></p>
-    
-<% } %>
+<h4 class="comment-title">People say about this palce:</h4>
 
-<form action="/comments/<%= campsite.id %>" method="post">
-    <h4><u><label for="">Share your thought about this place</label></u></h4>
+<div class="comments-wrapper">
     
-    <label for="">Name</label>
-    <input type="text" name="name">
-    <br>  
-    <br>
-    <textarea name="comment"></textarea>
-    <button>post</button>
-</form>
+    <div>
+        <% for (let comment of comments) { %>
+            
+            <h4 class="name"><%= comment.name %> - <span class="date"><%= comment.date %></span></h4>
+            <p class="comment"><%= comment.comment %></p>
+            
+            <% } %>
+        </div>
+        
+        <div>
+            <form action="/comments/<%= campsite.id %>" method="post">
+                <h4><label for="">Share your thought:</label></h4>
+                
+                <label for="">Name</label>
+                <input type="text" name="name">
+                <br>  
+                <br>
+                <textarea name="comment"></textarea>
+                <br>
+                <button class="style-btn">Post</button>
+            </form>
+        </div>
+        
+    </div>
+    
+<div>
+    <button class="style-btn">Delete</button>
+    <a class="style-edit" href="/campsites/<%= campsite.id %>/edit">Edit</a>
+</div>

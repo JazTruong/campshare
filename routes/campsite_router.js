@@ -32,7 +32,7 @@ router.post('/campsites', (req, res) => {
         INSERT INTO campsites 
         (name, location, image_url, image_url_1, image_url_2, thing_to_do, description, user_id)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
-    `
+        `
     db.query(sql, [name, location, imageUrl, imageUrlOne, imageUrlTwo, thingToDo, description, userId], (err, result) => {
         if (err) {
             console.log(err);
@@ -68,7 +68,7 @@ router.get('/campsites/:id', (req, res) => {
 router.delete('/campsites/:id', ensureLoggedIn, (req, res) => {
     const sql = `
         DELETE FROM campsites WHERE id = $1;
-    `
+        `
     db.query(sql, [req.params.id], (err, result) => {
         if (err) {
             console.log(err);
@@ -80,7 +80,7 @@ router.delete('/campsites/:id', ensureLoggedIn, (req, res) => {
 router.get('/campsites/:id/edit', ensureLoggedIn, (req, res) => {
     const sql = `
         SELECT * FROM campsites WHERE id = $1; 
-    `
+        `
     db.query(sql , [req.params.id], (err, result) => {
         if (err) {
             console.log(err);
@@ -109,7 +109,7 @@ router.put('/campsites/:id', (req, res) => {
         thing_to_do = $6,
         description = $7
         WHERE id = $8;
-    `
+        `
     db.query(sql, [name, location, imageUrl, imageUrlOne, imageUrlTwo, thingToDo, description, req.params.id], (err, result) => {
         if (err) {
             console.log(err);
@@ -130,7 +130,7 @@ router.post('/comments/:id', ensureLoggedIn, (req, res) => {
         INSERT INTO comments
         (name, comment, user_id, campsite_id)
         VALUES ($1, $2, $3, $4);
-    `
+        `
     db.query(sql, [name, comment, userId, campsiteId], (err, result) => {
         if (err) {
             console.log(err);

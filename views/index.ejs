@@ -1,12 +1,16 @@
-<h1>Favourite Campsites</h1>
+<h1 class="index-page">Favourite <span class="title-color">Campsites</span></h1>
 
-<% for (let campsite of campsites) { %>
-
-    <h3>
-        <a href="/campsites/<%= campsite.id %>">
-        <%= campsite.name %></a>
-    </h3>
-
-    <img src="<%= campsite.image_url %>" alt="">
-
-<% } %>
+<div class="grid-wrapper">
+    <% for (let campsite of campsites) { %>
+      
+        <div class="display-img">
+            <h3>
+                <a class="home-btn" href="/campsites/<%= campsite.id %>">
+                <%= campsite.name %></a>
+            </h3>
+        
+            <img src="<%= campsite.image_url %>" alt="">
+        </div>
+       
+    <% } %>
+</div>
