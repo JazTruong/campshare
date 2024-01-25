@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require('express');
 const app = express();
 require('bcrypt');
-const port = 3000;
+const port = process.env.PORT || 3000;
 const expressLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const setCurrentUser = require('./milddlewares/set_current_user');
@@ -21,7 +21,7 @@ app.use(methodOverride('_method'));
 app.use(expressLayouts);
 app.use(requestLogger);
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET || 'camping',
     resave: false,
     saveUninitialized: true
 }));

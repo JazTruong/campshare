@@ -4,6 +4,10 @@ Welcome to Campshare – your go-to destination for discovering and sharing the 
 
 ## 💻 [click here to see my project!](https://github.com/JazTruong/campshare)
 
+## Wireframe
+![project-wireframe](/images/wireframe.png)
+![CSS-planing](/images/CSS-planning.png)
+
 ## 🏞️ Screenshot
 ![home](/images/home-page.png)
 ![campsites](/images/campsites-page.png)
@@ -12,19 +16,20 @@ Welcome to Campshare – your go-to destination for discovering and sharing the 
 
 ## 🚀 Cool tech
 
- - NODE, EXPRESS, POSTGRES
- - HTML, CSS, JAVASCRIPT 
+ - Node, Express, Postgre
+ - html, css, javaScript
 
 ## 🏁 Getting started
 
 
 ## 😱 Bugs to fix 💩
 - A few syntax errors
-- Couldn't run code due to forget requiring middlewares (like link to database or dotenv)
+- Couldn't run code due to forget requiring middlewares
 
 ## 😭 Lessons learnt
 - Should having limit timeframe for solving errors. Ask for help if taking too long to solve errors or problems.
+- Remember asynchronous vs synchronous functions, their working flow
 
 ## ✅ Future features
 - Save feature for user who want to have their own collection in the web.
-- Chat box to communicate with others. 
+- Chatbox feature for communicating.  

@@ -22,9 +22,7 @@
     </div>
 </div>
 
-<form action="/campsites/<%= campsite.id %>?_method=delete" method="post">
-    
-</form>
+
 
 
 <h4 class="comment-title">People say about this palce:</h4>
@@ -56,7 +54,9 @@
         
     </div>
     
-<div>
-    <button class="style-btn">Delete</button>
+<div class="delete-btn">
+    <form action="/campsites/<%= campsite.id %>?_method=delete" method="post">
+        <button class="style-btn">Delete</button>
+    </form>
     <a class="style-edit" href="/campsites/<%= campsite.id %>/edit">Edit</a>
 </div>

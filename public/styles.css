@@ -208,3 +208,7 @@ nav {
      gap: 20px;
 
 }
+
+.delete-btn {
+    display: flex; 
+}
