@@ -2,8 +2,6 @@
 
 Welcome to Campshare – your go-to destination for discovering and sharing the best camping experiences across Australia. Whether you're a seasoned adventurer or a first-time camper, find inspiration, tips, and firsthand accounts to enhance your next outdoor journey. Join our community, explore stunning campsites, and connect with fellow nature enthusiasts. 
 
-## 💻 [click here to see my project!](https://github.com/JazTruong/campshare)
-
 ## Wireframe
 ![project-wireframe](/images/wireframe.png)
 ![CSS-planing](/images/CSS-planning.png)
