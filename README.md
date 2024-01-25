@@ -20,7 +20,7 @@ Welcome to Campshare – your go-to destination for discovering and sharing the 
  - html, css, javaScript
 
 ## 🏁 Getting started
-
+[Click here to go live](https://campshare.onrender.com)
 
 ## 😱 Bugs to fix 💩
 - A few syntax errors
