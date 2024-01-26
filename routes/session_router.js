@@ -17,35 +17,35 @@ router.post('/signup', (req, res) => {
             return
         }
 
-        if (result.rows[0].email === req.body.email) {
-            console.log('email existed!');
-            res.render('email_existed')
-            return
-        }
-    });
+        if (result.rows.length === 0) {
+            const email = req.body.email;
+            const plainTextPass = req.body.password;
+            const saltRound = 10;
+            console.log(email);
+            bcrypt.genSalt(saltRound, (err, salt) => {
+                bcrypt.hash(plainTextPass, salt, (err, hashedPass) => {
+                    const sql = `
+                        INSERT INTO users 
+                        (email, password_digest)
+                        VALUES ($1, $2);
+                        `
+                    db.query(sql , [email, hashedPass], (err, result) => {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            console.log('user created!');
+                            console.log(result.rows);
+                        }
+                            res.render('successful_sign_up')
+                    });
+                });
     
-    const email = req.body.email;
-    const plainTextPass = req.body.password;
-    const saltRound = 10;
-    
-    bcrypt.genSalt(saltRound, (err, salt) => {
-        bcrypt.hash(plainTextPass, salt, (err, hashedPass) => {
-            const sql = `
-                INSERT INTO users 
-                (email, password_digest)
-                VALUES ($1, $2);
-            `
-            db.query(sql , [email, hashedPass], (err, result) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log('user created!');
-                    console.log(result.rows);
-                }
-                res.render('successful_sign_up')
             });
-        });
+        } else {
+            res.render('email_existed')
+        };
     });
+    
 });
 
 router.get('/login', (req, res) => {
